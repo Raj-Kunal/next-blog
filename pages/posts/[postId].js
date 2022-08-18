@@ -2,18 +2,19 @@ import Author from "../../components/_child/Author"
 import Format from "../../layout/Format"
 import Image from "next/dist/client/image";
 import Related from "../../components/_child/Related";
-import fetcher from "../../lib/Fetcher";
+import Fetcher from "../../lib/Fetcher";
 import Error from "../../components/_child/Error"
 import Loading from "../../components/_child/Loading"
 import { useRouter} from "next/router"
 import { SWRConfig } from "swr";
+import GetPosts from "../../lib/Helper";
 
 
 const Page = ({fallback}) => {
 
   const router = useRouter();
   const { postId } = router.query;
-  const {data, isError, isLoading} = fetcher(`api/posts/${postId}`);
+  const {data, isError, isLoading} = Fetcher(`api/posts/${postId}`);
 
   if  (isError) {
     <Error />
@@ -64,7 +65,7 @@ export default Page
 
 export async function getStaticProps({params}){
   const {postId} = params;
-  const posts = await getPosts(postId);
+  const posts = await GetPosts(postId);
 
   return {
     props:{
@@ -76,7 +77,7 @@ export async function getStaticProps({params}){
 }
 
 export async function getStaticPaths(){
-  const posts = await getPosts();
+  const posts = await GetPosts();
 
   const paths = posts.map(value => {
     return {
