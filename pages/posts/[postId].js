@@ -2,7 +2,7 @@ import Author from "../../components/_child/Author"
 import Format from "../../layout/Format"
 import Image from "next/dist/client/image";
 import Related from "../../components/_child/Related";
-import fetcher from "../../lib/fetcher";
+import fetcher from "../../lib/Fetcher";
 import Error from "../../components/_child/Error"
 import Loading from "../../components/_child/Loading"
 import { useRouter} from "next/router"
