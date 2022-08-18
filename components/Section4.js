@@ -4,7 +4,7 @@ import Link from 'next/dist/client/link'
 
 import Error from "./_child/Error";
 import Loading from "./_child/Loading";
-import Fetcher from "../lib/fetcher";
+import Fetcher from "../lib/Fetcher";
 
 const section4 = () => {
 

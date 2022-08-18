@@ -9,7 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, {Autoplay} from "swiper"
 // Import Swiper styles
 import 'swiper/css';
-import Fetcher from '../lib/fetcher';
+import Fetcher from '../lib/Fetcher';
 
 
 

@@ -10,7 +10,7 @@ import 'swiper/css';
 import Post from './Post';
 import Error from "./_child/Error";
 import Loading from "./_child/Loading";
-import Fetcher from '../lib/fetcher';
+import Fetcher from '../lib/Fetcher';
 
 
 const Section3 = () => {

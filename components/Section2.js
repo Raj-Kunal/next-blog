@@ -1,4 +1,4 @@
-import Fetcher from "../lib/fetcher";
+import Fetcher from "../lib/Fetcher";
 import Post from "./Post";
 import Error from "./_child/Error";
 import Loading from "./_child/Loading";
