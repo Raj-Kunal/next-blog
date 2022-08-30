@@ -1,19 +1,22 @@
 import Image from "next/dist/client/image";
 import Link from "next/dist/client/link";
 import Author from "./Author";
-import Error from './Error';
-import Loading from './Loading';
-import Fetcher from '../../lib/Fetcher';
+// import Error from './Error';
+// import Loading from './Loading';
+// import Fetcher from '../../lib/Fetcher';
+import Posts from "../../pages/api/data"
 
 const Related = () => {
-  const { data, isLoading, isError} = Fetcher("api/trending");
-  if(isError) {
-    <Error />
-  }
+  const data = Posts.Trending;
+  // console.log(data);
+  // const { data, isLoading, isError} = Fetcher("api/trending");
+  // if(isError) {
+  //   <Error />
+  // }
 
-  if(isLoading) {
-    <Loading />
-  }
+  // if(isLoading) {
+  //   <Loading />
+  // }
 
   const Post = ({data}) => {
 
@@ -62,7 +65,7 @@ const Related = () => {
 
   return (
     <section className="pt-20">
-      <h1 className="font-bold text-3xl py-10">Related</h1>
+      <h1 className="font-bold text-3xl py-10  md:text-left">Related</h1>
       <div className="flex flex-col gap-10">
         {
           data?.map((value, index) => {

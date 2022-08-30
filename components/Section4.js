@@ -2,24 +2,16 @@ import Image from "next/dist/client/image";
 import Author from './_child/Author'
 import Link from 'next/dist/client/link'
 
-import Error from "./_child/Error";
 import Loading from "./_child/Loading";
-import Fetcher from "../lib/Fetcher";
+import Posts from "../pages/api/data";
 
 const section4 = () => {
 
-  const { data, isLoading, isError} = Fetcher("api/popular");
+  const data = Posts.Posts;
 
-  if(isError) {
-    <Error />
-  }
-
-  if(isLoading) {
-    <Loading />
-  }
   if(data) {
     return (
-      <section className="container mx-auto md:px-20 py-16">
+      <section className="container px-2 mx-auto md:px-20 py-16">
         <div className="grid lg:grid-cols-2">
           <div className="item">
             <h1 className="font-bold text-4xl py-12">Business</h1>

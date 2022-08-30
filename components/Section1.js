@@ -1,30 +1,20 @@
 import Link from 'next/dist/client/link'
 import Image from 'next/dist/client/image'
 import Author from './_child/Author'
-import Error from './_child/Error';
-import Loading from './_child/Loading';
+
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, {Autoplay} from "swiper"
 // Import Swiper styles
 import 'swiper/css';
-import Fetcher from '../lib/Fetcher';
 
+import Posts from "../pages/api/data";
 
 
 const Section1 = () => {
+    const data = Posts.Trending;
 
-    const { data, isLoading, isError} = Fetcher("api/trending");
-
-    if(isError) {
-      <Error />
-    }
-  
-    if(isLoading) {
-      <Loading />
-    }
-  
 
     SwiperCore.use([Autoplay])
 const bg = {
@@ -33,7 +23,7 @@ const bg = {
 }
 
   return (
-   <section className='py-16' style={bg}>
+   <section className='px-5 py-16' style={bg}>
     <div className="container mx-auto md:px-20 ">
         <h1 className='font-bold text-4xl pb-12 text-center'>Trending</h1>
         <Swiper
@@ -59,7 +49,7 @@ const bg = {
   )
 }
 
-function Slide({data, isError, isLoading}){
+function Slide({data}){
 
     const {id, title, author, published, img, category, description} = data
 

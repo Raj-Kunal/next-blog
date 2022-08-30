@@ -21,7 +21,7 @@ const Footer = () => {
        <Link href={"/"}><a><ImTwitter color="#888888" /></a></Link>
        <Link href={"/"}><a><ImYoutube color="#888888" /></a></Link>
         </div>
-        <p className="py-5 flex text-gray-400">Copyright ©2022 All rights reserved | This template is made by Kunal Raj</p>
+        <p className="py-5 flex text-gray-400 text-center">Copyright ©2022 All rights reserved | This template is made by Kunal Raj</p>
         <p className="text-gray-400 text-center">Terms & Condition</p>
       </div>
     </div>
